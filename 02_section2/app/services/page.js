@@ -1,11 +1,20 @@
 import Link from "next/link";
 
-export default function services() {
-    return(
-        <div>
-            <h1>Services</h1>
-            <Link href="/">Home</Link>
-            {/* Note: In react we use 'to' with Link component to do the routing but in NextJs we use 'href'*/}
-        </div>
-    )
+export default function Services() {
+  return (
+    <div>
+      <h1>Services</h1>
+      {/* Here we are doing nested routing inside services */}
+      <p>
+        <Link href="/services/web-dev">Web Development</Link>
+      </p>
+      <p>
+        <Link href="/services/app-dev">App Development</Link>
+      </p>
+      <p>
+        <Link href="/">Home</Link>
+      </p>
+      
+    </div>
+  );
 }
