@@ -13,3 +13,7 @@ export default function About() {
         </div>
     )
 } 
+
+
+// Route Grouping is created to group related routes together, also to organize the routes in a better way.
+// For this purpose we make a folder by this syntax: (application), (marketing).

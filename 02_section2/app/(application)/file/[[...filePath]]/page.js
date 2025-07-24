@@ -21,3 +21,8 @@ export default async function FilePath({params}) {
 // to handle this we can either make a page.js file in the file folder or we can handle this by using optional catch all routes.
 // to handle catch all routes we can use [[...filePath]] instead of [...filePath] in the file folder.
 // Note : but we can't use catch all routes in the root folder. becuase then it become confusing for the server which file to serve([[...filePath]] or root folder page.js), but if we remove root folder page.js file then it will work.
+
+
+
+// Route Grouping is created to group related routes together, also to organize the routes in a better way.
+// For this purpose we make a folder by this syntax: (application), (marketing).
