@@ -4,7 +4,6 @@ export default function Services() {
   return (
     <div>
       <h1>Services</h1>
-      {/* Here we are doing nested routing inside services */}
       <p>
         <Link href="/services/web-dev">Web Development</Link>
       </p>
