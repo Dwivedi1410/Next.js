@@ -28,6 +28,9 @@ export default async function Home({searchParams, params}) {
         <Link href="/services">Services</Link>
         {/* Note: In react we use 'to' with Link component to do the routing but in NextJs we use 'href'*/}
       </p>
+      <p>
+        <Link href="/file">File </Link>{" "}
+      </p>
     </div>
   );
 }
