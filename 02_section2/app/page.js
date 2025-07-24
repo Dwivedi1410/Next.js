@@ -1,5 +1,14 @@
 import Link from "next/link";
 
+
+export const metadata = {
+  title: "Tech Company",
+  description: "This is a description of Tech Company",
+}
+
+// If you write this metadata in the page.js file then it will only apply to the page.js file.
+// So if you want to define separate metadata for each page then you have to write the metadata in the profile.js file or layout.js file of that page.
+
 export default async function Home({searchParams, params}) {
   // Each component gets a porp which is an object => contains two promises (params and searchParams)
 

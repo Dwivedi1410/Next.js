@@ -1,5 +1,9 @@
 import Link from "next/link"
 
+export const metadata = {
+    title: "Comments",
+}
+
 export default async function Comments({params}) {
     console.log(await params);
     const blogName = await params;
