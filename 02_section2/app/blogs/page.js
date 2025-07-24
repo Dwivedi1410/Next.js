@@ -9,13 +9,13 @@ export default function Blogs() {
         <>
             <h1>All Blogs</h1>
             <p>
-                <Link href="/blogs/blog1">Blog1</Link>
+                <Link href="/blogs/1">Blog1</Link>
             </p>
             <p>
-                <Link href="/blogs/blog2">Blog2</Link>
+                <Link href="/blogs/2">Blog2</Link>
             </p>
             <p>
-                <Link href="/blogs/blog3">Blog3</Link>
+                <Link href="/blogs/3">Blog3</Link>
             </p>
         </>
     )
