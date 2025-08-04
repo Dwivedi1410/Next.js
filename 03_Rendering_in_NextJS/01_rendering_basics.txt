@@ -1,0 +1,60 @@
+NextJS Supports various types of renderings like client side rendering and server side rendering , static site generation, incremental site regeneration and many more.
+
+
+Q) where the HTML of our can be generated.
+
+i) Server Side => slow speed but better SEO.
+ii) Client side => Frameworks like React, Vue, Angular  uses client side rendering => fast as comapred to server side rendering but have low SEO(search engine optimization) because mostly search engines look for HTML but in client side rendering very few  content is listed in the HTML file most of the content is coming from the javascript file.
+
+
+
+NextJs uses both client side as well as server side rendering to manage both the features SEO and speed.
+
+
+Note:- In a Vite React project, after running npm run build to create the production build, you should use npm run preview to start a local server that serves your built app exactly as it would run in production. This allows you to test the production output of your application locally.
+
+
+In Next.js, an RSC file refers to the React Server Component Payload sent by the server to the client. This payload is a compact, serialized, binary-like representation of the rendered React Server Components tree. It contains:
+The rendered output of server components,
+Placeholders for where client components should be rendered and references to their JavaScript files,
+Props passed from server components to client components.
+
+
+
+React Rendering
+Client-Side Rendering (CSR) Only: React by itself renders your app entirely in the browser (the client). When a user visits your React app, the server sends a minimal HTML file with a <div id="root"> and the necessary JavaScript bundle. The browser then runs this JavaScript, which generates the UI dynamically.
+
+How it works:
+The initial HTML is almost empty; React code runs in the browser to generate UI.
+All page navigation and updates happen through React, without full-page reloads.
+By default, data fetching and rendering happen in the browser.
+
+Implications:
+Slower initial load (users see a blank screen until JavaScript runs).
+Not SEO-friendly by default, because search engines may struggle to index content that isn’t present in the first HTML.
+Excellent for building highly interactive interfaces.
+
+
+
+
+Next.js Rendering
+Server-Side Rendering (SSR) and More: Next.js is built on top of React and adds multiple rendering strategies:
+
+Server-Side Rendering (SSR): Pages are rendered on the server for every request. The server sends fully formed HTML, so users (and search engines) see content immediately.
+
+Static Site Generation (SSG): Pages are rendered during build time, and static HTML is served to users—super fast and SEO-friendly.
+
+Incremental Static Regeneration (ISR): Hybrid of SSG and SSR; allows static pages to be updated at runtime.
+
+Client-Side Rendering (CSR): Still possible for parts of your app when needed.
+
+How it works:
+You decide, per page or per component, whether to render it on the server, at build time, or only in the client.
+Built-in data fetching methods (getServerSideProps, getStaticProps) control rendering mode.
+The server returns HTML that already contains content, so the user sees a complete page immediately.
+
+Implications:
+Faster initial load, especially for SSR and SSG.
+SEO-friendly: Search engines can easily read content directly from the HTML.
+Flexibility: You can mix SSR, SSG, and CSR—even on the same page (using features like Partial Prerendering).
+
