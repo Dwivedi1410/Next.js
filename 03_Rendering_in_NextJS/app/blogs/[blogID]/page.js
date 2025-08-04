@@ -6,6 +6,14 @@ export const dynamicParams = false;
 // However, when dynamicParams is set to false, Next.js will only generate pages for the blogIDs returned by generateStaticParams. 
 // This means users cannot access pages for blogIDs that were not specified ahead of time.
 
+
+export const revalidate = 10;
+// By default it's value is false (means no regeration)
+// The revalidate property is used to control how often Next.js should revalidate (or refresh) the page content.
+// By setting revalidate to 10, the page will be revalidated every 10 seconds.
+// This means that if the page is accessed within 10 seconds of the last revalidation, the cached version will be served, and if it's older, the page will be regenerated.
+// This is useful for pages that are frequently updated but don't need to be updated immediately. 
+
 export async function generateStaticParams() {
   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await response.json();
@@ -58,6 +66,7 @@ const Blog = async ({ params }) => {
       </nav>
       <div>
         <h1>Welcome to Our Blog {blogID}</h1>
+        <h1>Date: {new Date().toLocaleString()}</h1>
         <p>This is blog {blogID} page.</p>
       </div>
     </>
