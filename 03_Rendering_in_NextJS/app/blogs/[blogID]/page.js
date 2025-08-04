@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const dynamicParams = false;
+// When dynamicParams is set to true (the default), Next.js will try to generate pages for any blogID requested, even if it wasn't pre-generated at build time. 
+// For example, if you only have 200 blogIDs, a user could still access /blogs/300 or /blogs/400, and Next.js would generate those pages on demand.
+// However, when dynamicParams is set to false, Next.js will only generate pages for the blogIDs returned by generateStaticParams. 
+// This means users cannot access pages for blogIDs that were not specified ahead of time.
+
 export async function generateStaticParams() {
   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await response.json();
