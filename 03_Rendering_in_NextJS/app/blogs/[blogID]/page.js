@@ -1,13 +1,15 @@
 import Link from "next/link";
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
+
 // When dynamicParams is set to true (the default), Next.js will try to generate pages for any blogID requested, even if it wasn't pre-generated at build time. 
 // For example, if you only have 200 blogIDs, a user could still access /blogs/300 or /blogs/400, and Next.js would generate those pages on demand.
 // However, when dynamicParams is set to false, Next.js will only generate pages for the blogIDs returned by generateStaticParams. 
 // This means users cannot access pages for blogIDs that were not specified ahead of time.
 
 
-export const revalidate = 10;
+// export const revalidate = 10;
+
 // By default it's value is false (means no regeration)
 // The revalidate property is used to control how often Next.js should revalidate (or refresh) the page content.
 // By setting revalidate to 10, the page will be revalidated every 10 seconds.
@@ -15,17 +17,18 @@ export const revalidate = 10;
 // This is useful for pages that are frequently updated but don't need to be updated immediately. 
 
 export async function generateStaticParams() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await response.json();
-  console.log(data);
-  return data.map(({ id }) => ({ blogID: `${id}` }));
-  // return [
-  //   { blogID: "1" },
-  //   { blogID: "2" },
-  //   { blogID: "3" },
-  //   { blogID: "4" },
-  //   { blogID: "5" },
-  // ];
+  // const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  // const data = await response.json();
+  // console.log(data);
+  // return data.map(({ id }) => ({ blogID: `${id}` }));
+
+  return [
+    { blogID: "1" },
+    { blogID: "2" },
+    { blogID: "3" },
+    { blogID: "4" },
+    { blogID: "5" },
+  ];
 }
 // The generateStaticParams() function enables Next.js to pre-render static pages for dynamic routes at build time.
 // By providing a list of possible route parameters (such as blog IDs), Next.js will automatically generate a static page for each specified parameter value.
