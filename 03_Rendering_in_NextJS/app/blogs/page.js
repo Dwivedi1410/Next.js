@@ -47,15 +47,9 @@ const Blogs = () => {
         </ol>
         <div className="blog-links">
           <br />
-          <Suspense fallback={<div>Loading Views...</div>}  >
-            <Views />
-          </Suspense>
-          <Suspense fallback={<div>Loading Likes...</div>}>
-            <Likes />
-          </Suspense>
-          <Suspense fallback={<div>Loading Comments...</div>}>
-            <Comments />
-          </Suspense>
+         <Likes />
+         <Comments />
+         <Views />
         </div>
       </div>
     </>
@@ -63,3 +57,14 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+
+//Notes about client component
+// If parent component is set to be client compoent then all of it's child components will be set to be client components.So if we make this page clinet component then all the component Like , Views and Comments will become a clinet component. and their code will be sent to the client side.
+
+// If you mark any component client component then it's code will be sent to the client side.(browserside)
+
+// Hence only make those components client component that are neccecary.
+
+
+// By default each component in the NextJS is a server component.
