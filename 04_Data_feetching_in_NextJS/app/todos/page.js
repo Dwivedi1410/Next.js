@@ -1,4 +1,8 @@
 const Todos = async () => {
+
+    const slowResponse = await fetch('https://procodrr.vercel.app/?sleep=1000')
+    const slowResponseData = await slowResponse.json();
+
   const todos = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=5");
   const todosData = await todos.json();
 //   console.log(todosData);
