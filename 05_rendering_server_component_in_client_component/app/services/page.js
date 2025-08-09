@@ -15,11 +15,11 @@ const Services = () => {
       <Header />
       <div>
         <h1>Our Services</h1>
-        <ServiceList
-          children={services.map((service) => (
+        <ServiceList>
+          {services.map((service) => (
             <ServiceItem key={service} serviceName={service} />
           ))}
-        />
+        </ServiceList>
       </div>
     </>
   );
